@@ -1,30 +1,46 @@
 <html>
 	<head>
     <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">	 
-		<h1>Copay Assistance Enorllment Form</h1>
-		<br>
-		<br> 
+		<center><h1>Copay Assistance Enorllment Form</h1></center>
 	<style>
-		body {background-color: #CCCCCC;}
+		body {background-color: #6699FF;}
 		h1   {color: blue;}
 		h2   {color: black;}
-		h3   {color: yellow;}
-		p    {color: red;}
+		h3   {color: black;}
+		p    {color: green;}
+		c    {color: black;}
+        .button {
+    				background-color: #000033;
+    				border: none;
+    				color: white;
+    				padding: 8px 22px;
+    				text-align: center;
+    				text-decoration: none;
+    				display: inline-block;
+    				font-size: 14px;
+    				margin: 4px 2px;
+    				cursor: pointer;
+				}
+        
 	</style>
 	</headd>
 	<body bgcolor="white">
-		<h3>Please enter your details to offer copay..</h3><br>
+		<center><h3>Please enter your details to offer copay..</h3></center><br>
+<center>
+<c>
 <form action="/action_page.php">
 		First name: <input type="text" name="FirstName" value=""><br><br>
 		Last name: <input type="text" name="LastName" value=""><br><br>
 		Gender: <input type="radio" name="gender" value="male"> Male
        			<input type="radio" name="gender" value="female"> Female
  			<input type="radio" name="gender" value="other"> Other<br><br>		
-    Date of Birth: <input type="date" id="DOB" name="Date of Birth" min="1970-01-01"><br>		
-    Zip Code: <input type="text" name="Zipcode" pattern="[0-9]{5}" title="Five digit code"><br>
-			<input type="submit" value="Submit"><br><br>	
-	</form>			
-<p>Click the "Submit" button to register.</p>
+    Date of Birth: <input type="date" id="DOB" name="Date of Birth" min="1970-01-01"><br><br>	
+    Zip Code: <input type="text" name="Zipcode" pattern="[0-9]{5}" title="Five digit code"><br><br>
+			
+        <input type="button" class="button" value="Submit">
+</form>	
+</c>
+</center>
 <br><br>
 	</body> 
  	<footer>  
