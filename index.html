@@ -29,17 +29,36 @@
 <center>
 <c>
 <form action="/action_page.php">
-		First name: <input type="text" name="FirstName" value=""><br><br>
-		Last name: <input type="text" name="LastName" value=""><br><br>
+		First name: <input type="text" id="FirstName" name="FirstName" ><br><br>
+		Last name: <input type="text" id="LastName" name="LastName"><br><br>
 		Gender: <input type="radio" name="gender" value="male"> Male
        			<input type="radio" name="gender" value="female"> Female
  			<input type="radio" name="gender" value="other"> Other<br><br>		
     Date of Birth: <input type="date" id="DOB" name="Date of Birth" min="1970-01-01"><br><br>	
-    Zip Code: <input type="text" name="Zipcode" pattern="[0-9]{5}" title="Five digit code"><br><br>
-			
-        <input type="button" class="button" value="Submit">
+    Zip Code: <input type="text" id="Zipcode" name="Zipcode" pattern="[0-9]{5}" title="Five digit code" ><br><br>
+    
+<input type="button" class="button" value="Submit" onclick="myFunction()"> 
+
+<script>
+function myFunction() 
+{
+var _date= new Date();
+var x=_date.getTime();
+var _lastName=document.getElementById("LastName").value;
+_lastName=_lastName.substring(0,3);
+_lastName=_lastName.toUpperCase();
+    document.getElementById("button").innerHTML = _lastName + x;
+
+}
+   
+</script>
+
+<p id="button"></p>
+
 </form>	
 </c>
+
+
 </center>
 <br><br>
 	</body> 
