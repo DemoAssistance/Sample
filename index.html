@@ -2,40 +2,38 @@
   
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-<h1>Copay Assistance!!</h1>
-<h2> <marquee>Thank you for chosing Express Scripts!</marquee></h2>
 </head>
+
+  <title>
+    <h1>Copay Assistance Enorllment Form</h1>
+  </title>
   
 <body bgcolor="white">
-  
+
 Please enter your details to offer copay.
 
-<form action="">
+<form action="/action_page.php">
 First name: <input type="text" name="FirstName" value=""><br>
 Last name: <input type="text" name="LastName" value=""><br>
-</form>
+Gender: <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+  	<input type="radio" name="gender" value="other"> Other
 
-<form action="">
-  <input type="radio" name="gender" value="male"> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
-</form>
-
-<form>
-  <div>
 Date of Birth: <input type="date" id="DOB" name="Date of Birth" min="1970-01-01">
-  </div>
-</form>
-  
-<form action="">
-ZIP Code: <input type="text" pattern="[0-9]{5}" title="Five digit zip code">
-</form>
 
-<form action="">
+Zip Code: <input type="text" name="Zipcode" pattern="[0-9]{5}" title="Five digit code">
+
+
+
 <input type="submit" value="Submit">
 </form>
+
 
 <p>Click the "Submit" button to register.</p>
 
 </body>
+  <footer>
+      <h2> <marquee>Thank you for chosing Express Scripts!</marquee></h2>
+</footer>  
+  
 </html>
