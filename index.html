@@ -1,5 +1,6 @@
 <html style="border:groove">
-<Section style="border:ridge">
+<table>
+	<tr>
 	<head>
     <title>
 	Therapeutic Area
@@ -18,15 +19,16 @@
 	<body bgcolor="white">
 		<center><h1>Copay Program</h1></center>
 		<center><h1>Get Card</h1></center><br>
-<center>
+
 <c>
 <form action="">
-		<h2>Select the therapeutic area for which the script is written:</h2><br>
-		Gender: <input type="radio" name="therapytype" value="Rheumatology"> Rheumatology<br>
-       			<input type="radio" name="therapytype" value="Dermatology"> Dermatology<br>
- 			<input type="radio" name="therapytype" value="Gastroenterology"> Gastroenterology<br>
- 			<input type="radio" name="therapytype" value="Ophthalmology"> Ophthalmology<br><br>
-Date Of Birth (mm/dd/yyyy): <Select type="radio" id="DOBMonth" name="Date of Birth" onchange="refreshDayList()">
+<table style="width:50%">
+		<tr><center><h2>Select the therapeutic area for which the script is written:</h2><br></center></tr>	
+		<tr ><center>&nbsp;&nbsp;<input type="radio" name="therapytype" value="Rheumatology"> Rheumatology<br>
+       		<input type="radio" name="therapytype" value="Dermatology"> Dermatology<br>
+ 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="therapytype" value="Gastroenterology"> Gastroenterology<br>
+ 			&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="therapytype" value="Ophthalmology"> Ophthalmology</center><br><br></tr>
+<tr><center>Date Of Birth (mm/dd/yyyy):<br> <Select type="radio" id="DOBMonth" name="Date of Birth" onchange="refreshDayList()">
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
@@ -193,7 +195,8 @@ Date Of Birth (mm/dd/yyyy): <Select type="radio" id="DOBMonth" name="Date of Bir
 		<option value="2016">2016</option>
 		<option value="2017">2017</option>
 
-	</Select> <br><br>
+	</Select> <br><br></center></tr>
+
  			<input type="checkbox" name="terms" id="terms" value="Yes">
 			<label for id="terms">The patient attests that he or she is NOT receiving prescription drug coverage under any federal, 
 						state or government-funded insurance program. The patient further understands that 
@@ -203,7 +206,28 @@ Date Of Birth (mm/dd/yyyy): <Select type="radio" id="DOBMonth" name="Date of Bir
 
 
 
-			<input type="button" class="button" value="Submit" onclick="document.location.href = 'https://demoassistance.github.io/Patient/'"> <br><br>
+			<center><input type="button" class="button" value="Submit" onclick="document.location.href = 'https://demoassistance.github.io/Patient/'"></center> <br><br>
+
+
+
+<script type="text/javascript">
+        function refreshDayList() {
+            updateDays('DOBYear', 'DOBMonth', 'DOBDay');
+        }
+        function clientValidateDOB(src, args) {
+            var year = document.getElementById('DOBYear').value;
+            var month = document.getElementById('DOBMonth').value;
+            var day = document.getElementById('DOBDay').value;
+            if (year == "1900" && month == "1" && day == "1")
+                args.IsValid = false;
+            else {
+                var dateFilled = new Date(year, month - 1, day);
+                if (dateFilled > (new Date()))
+                    args.IsValid = false;
+            }
+        }
+    </script>
+</table>
 
 <p>In Massachusetts, co-pay assistance is not available for products with certain generic equivalents (for example, any product with an AB-rated generic equivalent).<br><br>
 Available to patients with commercial prescription insurance coverage. This program is not valid for prescriptions reimbursed under Medicare (including Part D), 
@@ -211,48 +235,12 @@ Medicare Advantage, Medicaid, Medigap, Veterans’ Affairs, the Department of De
 or where prohibited by law.<br><br>
 The Patient can call 1-800-448-6472 to obtain additional information about this program or to stop participation.</p>
 
-<script>
-function myFunction() 
-{
-var _date= new Date();
-var x=_date.getTime();
-var _lastName=document.getElementById("LastName").value;
-_lastName=_lastName.substring(0,3);
-_lastName=_lastName.toUpperCase();
-    document.getElementById("button").innerHTML = _lastName + x;
-}
-   
-</script>
-
-<script type="text/javascript">
-        function refreshDayList() {
-            updateDays('DOBYear', 'DOBMonth', 'DOBDay');
-        }
-
-        function clientValidateDOB(src, args) {
-            var year = document.getElementById('DOBYear').value;
-            var month = document.getElementById('DOBMonth').value;
-            var day = document.getElementById('DOBDay').value;
-
-            if (year == "1900" && month == "1" && day == "1")
-                args.IsValid = false;
-            else {
-                var dateFilled = new Date(year, month - 1, day);
-
-                if (dateFilled > (new Date()))
-                    args.IsValid = false;
-            }
-        }
-    </script>
 
 <p id="button"></p>
 
 </form>	
-</c>
-
-
-</center>
-<br><br>
-	</body> 
-   </Section>
+</c> <br><br>
+	</body> </tr>
+<tr></tr>
+   </table>
  </html>
